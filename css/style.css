@@ -1,0 +1,492 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=PT+Serif&display=swap');
+
+
+/* mobile view/query */
+@media screen and (max-width: 600px) {
+    nav {
+        display: block;
+    }
+    nav > ul {
+        display: flex;
+        flex-direction: column;
+        padding: 0;
+        align-items: center;
+        
+
+    }
+
+    .skip {
+        color: black;
+        position: absolute;
+        left: -500px;
+        font-size: 20px;
+        font-weight: bold;
+        background-color: white; /* Add a background color */
+        padding: 10px; /* Add some padding */
+        display: block; /* Display as a block-level element */
+        text-align: left; /* Align text to the left */
+        z-index: 10; /* Ensure it's above other content */
+    }
+    :focus {
+        background-color: rgb(0, 0, 0);
+    }
+    .skip:focus{
+        left: 20px;
+        background-color: #3498db; /* Change background color on focus for visibility */
+        color: white; /* Change text color on focus for visibility */
+        outline: none; /* Optional: remove the default focus outline */
+    }
+   
+    .skip:hover {
+        text-decoration: underline;
+    }
+
+    
+
+    .recipe-gallery {
+        padding-left: 20px;
+        list-style-type: disc;
+        display: grid;
+        grid-template-columns: auto auto auto auto;
+    }
+    .pet-gallery img {
+        width: calc(50% - 10px);
+    }
+
+    nav li {
+        padding: 5px;
+        margin: 5px;
+    }
+
+    nav a {
+        padding: 10px;
+        font-size: 12px;
+    }
+    
+
+    main {
+        padding: 15px;
+    }
+    h1, h2, h3, p, figcaption, li, span, a {
+        font-size: 90%; /* Adjust text size for smaller screens */
+    }
+    .pet-gallery {
+        display: grid;
+        grid-template-columns: 1fr;
+        justify-items: center;
+    }
+
+    .pet-img {
+        grid-column: 1/3;
+    }
+
+    .recipe-gallery {
+        display: grid;
+        grid-template-columns: 1fr;
+        justify-items: center;
+    }
+
+    .recipe-img {
+        grid-column: 1/2;
+    }
+
+    .travel-gallery {
+        display: grid;
+        grid-template-columns: 1fr;
+        justify-items: center;  
+    }
+
+    .travel-img {
+        grid-column: 1/2;
+    }
+}
+
+    /* body style edits */
+    body{
+        background-color: #FFFFFF;
+        background-image: url('../images/background.jpg'); /* Path to your image */
+        background-size: cover; /* Covers the entire area of the body */
+        background-position: center; /* Centers the image */
+        background-repeat: no-repeat; /* Prevents the image from repeating */
+        background-attachment: fixed; /* Optional: Makes the background fixed during scroll */    
+        
+    }
+    
+    h1 {
+        margin: 16x 0;
+        font-size: 30px;
+        
+        font-family: Georgia, Times, "Times New Roman", serif;
+        font-weight: bold;
+        text-align: center;
+        display: block;
+        margin-top: 25px;
+        margin-bottom: 50px;
+    }
+
+    h2 {
+        font-size: 20px;
+        font-family: Georgia, Times, "Times New Roman", serif;
+        text-align: center;
+        display: block;
+        margin-top: 25px;
+        margin-bottom: 20px;
+    }
+
+    h3 {
+        font-size: 15px;
+        font-family: Georgia, Times, "Times New Roman", serif;
+        text-align: center;
+        display: block;
+        margin-bottom: 20px;
+    }
+
+    nav ul {
+        border: 2px solid rgb(0, 0, 0);
+        background-color: white;
+        font-size: 30px;
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;  /* Spread the links out evenly */
+    }
+
+    nav li {
+        margin: 10px;
+    }
+
+
+    /* navigation edits */
+
+    /* nav >a is a child selector */
+    nav a {
+        text-decoration: none;  /* Remove the underline from links */
+        color: rgb(0, 0, 0);           
+        font-weight: bold;
+    }
+
+    nav a:hover {
+        text-decoration: underline;  /* Underline the links when hovered */
+    }
+
+    .scroll-to-section {
+        display: inline-block;
+        margin: 0 10px;
+        padding: 10px 20px;
+        text-align: center;
+        color: rgb(0, 0, 0);
+        font-weight: bold;
+        border-radius: 5px;
+    }
+
+    .center-text {
+        text-align: center;
+        margin: 20px 0; /* This adds some space above and below the links */
+    }
+
+    .scroll-to-section:hover {
+        text-decoration: underline;
+    }
+
+    
+    html {
+        scroll-behavior: smooth;
+    }
+
+
+    p, figcaption{   
+        display: block; 
+        font-family: Georgia, Times, "Times New Roman", serif;  
+        font-size: 15px;
+        line-height: 1.5;
+        margin: 10px;
+        overflow: hidden;
+    }
+
+
+    img {
+        border: 5px solid #f506c1; 
+        padding: 10px;
+        margin: 20px auto;
+        border-top-right-radius: 30px;
+        width: 50%;  
+        transition: transform 0.3s ease;
+    }
+
+    img:hover {
+        transform: scale(1.05);
+
+    }
+
+    figure {
+        display: block;
+        text-align: center;
+        margin: 10px auto;
+        border-top-right-radius: 30px;
+    }
+
+
+
+    li {
+        display: block;
+        text-align: center;
+        margin: 10px auto;
+        color: black;
+    }
+
+
+
+    a{
+        text-decoration: underline;
+        text-transform: uppercase;
+        padding: 5px;
+        border: #FFFFFF;
+        color: #0067ac;
+        text-decoration: none;
+        transition: color 0.3s ease;
+    }
+
+
+    .gif{
+        display: none;
+    }
+
+    
+
+    div {
+        display:grid;
+        grid-template-columns: 1fr;
+        align-items: center;
+
+    }
+
+    span {
+        margin: 10px;
+        font-family: Georgia, Times, "Times New Roman", serif;
+        font-size: 1.2em;  
+    }
+
+    ul > li {
+        display: block;
+        text-align: center;
+        margin: 10px;
+        font-family: Georgia, Times, "Times New Roman", serif;
+        font-size: 1.2em;
+        color: black;
+    }
+
+    ol > li {
+        margin: 10px;
+        font-family: Georgia, Times, "Times New Roman", serif;
+        font-size: 1.2em;
+        color: black;
+    }
+
+    nav > ul > li {
+        display: inline-block;
+        margin: 20px;
+        font-size: 30px;
+    }
+
+    .location {
+        background-color: #fb008e;
+        border: black 3px solid;
+        color: rgb(0, 0, 0);
+        border-radius: 5px;
+
+    }
+    .icon {
+        width: 100px;
+        height: 100px;
+        align-items: center;
+        justify-content: center;
+        margin-right: 10px;
+        grid-column: auto;
+    }
+    
+        
+
+
+@media screen and (prefers-reduced-motion: reduce) {
+    .gif {
+        display: none;
+    }
+    .static {
+        display: block;
+    }
+    .animated-element1, .animated-element2, .transition-element1, .transition-element2 {
+        animation: none;
+        transition: none;
+    }
+    * {
+        transition: none;
+    }
+}
+
+
+
+/* tablet view */
+@media screen and (min-width: 600px) {
+  
+    /* Styles for 'scroll to specific location' buttons */
+    .scroll-to-section {
+      display: inline-block;
+      margin: 0 10px;
+      padding: 10px 20px;
+      text-align: center;
+      background-color: #fb008e;
+      color: rgb(0, 0, 0);
+      font-weight: bold;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+    }
+
+    .center-text {
+        text-align: center;
+        margin: 20px 0; /* This adds some space above and below the links */
+    }
+
+    .scroll-to-section:hover {
+      text-decoration: underline;
+    }
+    
+    /* Styles for 'audio' button */
+    .audio-control {
+      position: fixed;
+      top: 150px;
+      right: 10px;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      border: none;
+      border-radius: 5px;
+      color: white;
+      background-color: #5f0088;
+      transition: background-color 0.3s;
+    }
+    
+    .audio-control:hover {
+      background-color: #5f0088;
+    }
+    
+    /* Styles for 'back to top' button */
+    .back-to-top {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #0057b4;
+      color: white;
+      padding: 10px 20px;
+      text-align: center;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background-color 0.3s;
+      /* Initially hidden, will be shown with JavaScript */
+      display: none;
+    }
+    
+    .back-to-top:hover {
+      background-color: #0056b3;
+    }
+    
+    /* Ensure only these galleries are displayed in grid in tablet view */
+    .pet-gallery,
+    .recipe-gallery,
+    .travel-gallery {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      justify-items: center;
+    }
+    
+    .pet-img,
+    .recipe-img,
+    .travel-img {
+      grid-column: 1/3;
+    }
+    
+    .skip {
+        color: black;
+        position: absolute;
+        left: -500px;
+        font-size: 20px;
+        font-weight: bold;
+        background-color: white; /* Add a background color */
+        padding: 10px; /* Add some padding */
+        display: block; /* Display as a block-level element */
+        text-align: left; /* Align text to the left */
+        z-index: 10; /* Ensure it's above other content */
+    }
+    :focus {
+        background-color: rgb(0, 0, 0);
+    }
+    .skip:focus{
+        left: 20px;
+        background-color: #3498db; /* Change background color on focus for visibility */
+        color: white; /* Change text color on focus for visibility */
+        outline: none; /* Optional: remove the default focus outline */
+    }
+   
+    .skip:hover {
+        text-decoration: underline;
+    }
+  }
+
+/* desktop view */
+@media screen and (min-width: 992px) {
+
+    .skip {
+        color: black;
+        font-size: 20px;
+        font-weight: bold;
+        background-color: white; /* Add a background color */
+        padding: 10px; /* Add some padding */
+        display: block; /* Display as a block-level element */
+        text-align: left; /* Align text to the left */
+        z-index: 10; /* Ensure it's above other content */
+    }
+    
+    .skip:hover {
+        text-decoration: underline;
+    }
+    
+    .skip:focus {
+        background-color: #3498db; /* Change background color on focus for visibility */
+        color: white; /* Change text color on focus for visibility */
+        outline: none; /* Optional: remove the default focus outline */
+    }
+    .pet-gallery,
+    .recipe-gallery,
+    .travel-gallery {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      justify-items: center;
+    }
+    
+    .pet-img,
+    .recipe-img,
+    .travel-img {
+      grid-column: 1/5;
+    }
+
+    .audio-control {
+        position: fixed;
+        top: 150px;
+        right: 10px;
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+        border: none;
+        border-radius: 5px;
+        color: white;
+        background-color: #5f0088;
+        transition: background-color 0.3s;
+      }
+      
+      .audio-control:hover {
+        background-color: #5f0088;
+      }
+
+  }
+
